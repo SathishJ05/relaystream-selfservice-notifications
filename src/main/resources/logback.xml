@@ -1,0 +1,16 @@
+<configuration>
+
+    <!-- Console Appender -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%highlight(%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd'T'HH:mm:ss.SSSXXX}}){faint} %highlight(${LOG_LEVEL_PATTERN:-%5p}) %highlight(%X{keyServiceOrder:- }){magenta} %highlight(operation=%X{operation:- }){magenta} %highlight(%X{key:- }){yellow} %highlight(%X{key1:- }){orange} %highlight(%X{key2:- }){green} %highlight(---){faint} %highlight(%-40.40logger{39}){cyan} %highlight(:){faint} %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root Logger -->
+    <root level="info">
+        <appender-ref ref="console" />
+    </root>
+    <conversionRule conversionWord="highlight" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+
+</configuration>

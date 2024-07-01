@@ -1,0 +1,12 @@
+env: local
+spring:
+  artemis:
+    broker-url: tcp://localhost:61616
+    user: 
+    password: 
+  datasource:
+    url: jdbc:postgresql://localhost:5432/self-service
+    username: 
+    password: 
+    hikari:
+      schema: public

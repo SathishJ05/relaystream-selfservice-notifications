@@ -1,0 +1,36 @@
+spring:
+  profiles:
+    active: core-engine,notifications
+    default: core-engine,notifications
+    group:
+      env-local: core-engine,notifications,local-config
+      env-dev: core-engine,notifications,dev-config
+      env-cdt: core-engine,notifications,cdt-config
+      env-np: core-engine,notifications,np-config
+      env-prod: core-engine,notifications,prod-config
+  artemis:
+    mode: native
+    cluster:
+    broker-url: tcp://rs-dedicated-broker-${env}-westeurope-${spring.artemis.cluster}.maersk-digital.net:443?sslEnabled=true
+    user:
+    password:
+    listener:
+      acknowledge-mode: CLIENT
+  datasource:
+    url: 
+    username: 
+    password: 
+    hikari:
+      schema:
+  expression:
+    parser:
+      mode: TEMPLATE
+
+github:
+  token:
+  user: relaystream-bot
+  
+env:
+
+relaystream:
+  email: 

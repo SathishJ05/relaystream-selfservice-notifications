@@ -1,0 +1,12 @@
+env: prod
+spring:
+  artemis:
+    cluster: pq1125
+    user: relaystream-selfservice-consumer
+    password: 
+  datasource:
+    url: jdbc:postgresql://relaystream-prod.postgres.database.azure.com:5432/selfservice_prod?sslmode=require
+    username: selfservice_prod
+    password: 
+    hikari:
+      schema: selfservice_prod
